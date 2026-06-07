@@ -15,14 +15,9 @@ import chatRoutes from "./routes/chat.routes.js";
 
 const app = express()                    // Express ka app object banaya (yeh pura server hai)
 
-//  app.use(cors({                           // CORS middleware lagaya
-//      origin: process.env.CORS_ORIGIN,     // Env file se allowed frontend ka URL liya
-//      credentials: true                   // Cookies / token allow karne ke liye
-//  }))                                     // CORS config close
-
 app.use(cors({
-  origin: "http://localhost:5173",
-  credentials: true
+  origin: process.env.CORS_ORIGIN,
+  credentials: true,
 }))
 
 
