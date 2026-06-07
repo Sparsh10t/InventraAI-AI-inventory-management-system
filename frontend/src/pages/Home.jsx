@@ -126,7 +126,7 @@ const Navbar = () => {
           background: "linear-gradient(135deg, rgb(6,182,212), rgb(139,92,246))",
           display: "flex", alignItems: "center", justifyContent: "center",
           fontSize: 14, fontWeight: 700, color: "white"
-        }}>I</div>
+        }}>🗃️</div>
         <span style={{ color: "white", fontWeight: 700, fontSize: 18, letterSpacing: "-0.3px" }}>
           Inventra<span style={{ color: "rgb(6,182,212)" }}>AI</span>
         </span>
