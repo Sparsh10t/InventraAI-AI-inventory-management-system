@@ -25,7 +25,7 @@ const AddProductForm = ({ fetchProducts }) => {
     localStorage.getItem("token");
 
   await axios.post(
-    "http://localhost:8000/api/products/create",
+    "https://inventraai-ai-inventory-management-system.onrender.com/api/products/create",
     formData,
     {
       headers: {

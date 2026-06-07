@@ -47,7 +47,7 @@ const AIChatModal = ({ show, setShow, onClose }) => {
       const token = localStorage.getItem("token");
 
       const response = await axios.post(
-        "http://localhost:8000/api/chat",
+        "https://inventraai-ai-inventory-management-system.onrender.com/api/chat",
         { question: userQuestion },
         { headers: { Authorization: `Bearer ${token}` } }
       );

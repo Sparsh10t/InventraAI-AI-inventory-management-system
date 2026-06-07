@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API_URL =
-  "http://localhost:8000/api/forecast";
+  "https://inventraai-ai-inventory-management-system.onrender.com/api/forecast";
 
 export const getForecast = async () => {
   const token =

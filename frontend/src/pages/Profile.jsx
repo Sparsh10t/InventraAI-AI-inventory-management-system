@@ -18,7 +18,7 @@ const Profile = () => {
   const fetchProfile = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get("http://localhost:8000/api/users/profile", {
+      const response = await axios.get("https://inventraai-ai-inventory-management-system.onrender.com/api/users/profile", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUser(response.data.user);
@@ -45,7 +45,7 @@ const Profile = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.put(
-        "http://localhost:8000/api/users/profile",
+        "https://inventraai-ai-inventory-management-system.onrender.com/api/users/profile",
         formData,
         { headers: { Authorization: `Bearer ${token}` } }
       );

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8000/api/products";
+const API_URL = "https://inventraai-ai-inventory-management-system.onrender.com/api/products";
 
 export const getProducts = async () => {
   const token = localStorage.getItem("token");

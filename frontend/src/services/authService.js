@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API =
-  "http://localhost:8000/api/users";
+  "https://inventraai-ai-inventory-management-system.onrender.com/api/users";
 
 export const registerUser = async (
   userData

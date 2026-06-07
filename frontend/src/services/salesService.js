@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const SALES_API =
-  "http://localhost:8000/api/sales";
+  "https://inventraai-ai-inventory-management-system.onrender.com/api/sales";
 
 export const sellProduct = async (
   productId,

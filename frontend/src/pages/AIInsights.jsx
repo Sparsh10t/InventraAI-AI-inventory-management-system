@@ -69,7 +69,7 @@ const AIInsights = () => {
 const token = localStorage.getItem("token");
 
 const response = await axios.get(
-  "http://localhost:8000/api/insights",
+  "https://inventraai-ai-inventory-management-system.onrender.com/api/insights",
   {
     headers: {
       Authorization: `Bearer ${token}`,

@@ -205,7 +205,7 @@ const Dashboard = () => {
 
   const response =
     await fetch(
-      "http://localhost:8000/api/products/export-csv",
+      "https://inventraai-ai-inventory-management-system.onrender.com/api/products/export-csv",
       {
         headers: {
           Authorization:
