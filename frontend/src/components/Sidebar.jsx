@@ -27,7 +27,7 @@ const Sidebar = ({ setShowChat }) => {
       <div className="px-5 py-6 border-b border-white/[0.06]">
         <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-violet-500 flex items-center justify-center font-extrabold text-sm text-white shrink-0">
-            I
+            🗃️
           </div>
           <span className="text-white font-extrabold text-lg tracking-tight">
             Inventra<span className="text-cyan-400">AI</span>
