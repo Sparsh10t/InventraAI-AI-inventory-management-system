@@ -19,7 +19,7 @@ const AIRecommendations = ({
     });
 
     if (
-      product.quantity < 10 &&
+      product.quantity < 20 &&
       totalSold >= 5
     ) {
 
@@ -30,7 +30,7 @@ const AIRecommendations = ({
       });
     }
   });
-
+console.log("Recommendations:", recommendations);
   return (
     <div className="bg-white/[0.025] p-6 rounded-2xl shadow mt-8">
 

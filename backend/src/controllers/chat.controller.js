@@ -5,7 +5,6 @@ import { GoogleGenAI } from "@google/genai";
 import { Product } from "../models/Product.js";
 import { Sales } from "../models/Sales.js";
 
-console.log("Gemini Key Loaded:", process.env.GEMINI_API_KEY?.slice(0, 10));
 
 const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,

@@ -4,10 +4,7 @@ dotenv.config();
 import { Product } from "../models/Product.js";
 import { Sales } from "../models/Sales.js";
 import { GoogleGenAI } from "@google/genai";
-console.log(
-  "AI Summary Key:",
-  process.env.GEMINI_API_KEY?.slice(0, 10)
-);
+
 const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
 });
