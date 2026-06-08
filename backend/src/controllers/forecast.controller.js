@@ -1,4 +1,3 @@
-import axios from "axios";
 import { Sales } from "../models/Sales.js";
 
 export const getForecast = async (req, res) => {
@@ -7,21 +6,31 @@ export const getForecast = async (req, res) => {
       userId: req.user._id,
     });
 
-    const salesData = sales.map((sale) => sale.quantitySold);
+    if (sales.length === 0) {
+      return res.status(200).json({
+        success: true,
+        prediction: 0,
+      });
+    }
 
-    const response = await axios.post("http://127.0.0.1:5000/forecast", {
-      sales: salesData,
-    });
+    const totalSold = sales.reduce(
+      (sum, sale) => sum + sale.quantitySold,
+      0
+    );
+
+    const prediction = Math.round(
+      totalSold / sales.length
+    );
 
     res.status(200).json({
       success: true,
-      prediction: response.data.prediction,
+      prediction,
     });
+
   } catch (error) {
-    console.log(error);
     res.status(500).json({
       success: false,
       message: error.message,
     });
   }
-}; 
+};

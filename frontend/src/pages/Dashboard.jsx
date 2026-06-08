@@ -346,10 +346,10 @@ const Dashboard = () => {
 
 
         {/* ── AI Insights ── */}
-        <h2 className="text-lg font-bold text-white mt-9 mb-4 tracking-tight">🤖 AI Insights</h2>
+        <h2 className="text-lg font-bold text-white mt-9 mb-4 tracking-tight"> Insights</h2>
         <div className="grid grid-cols-2 gap-4 pb-12">
           <div className="bg-white/[0.025] border border-white/[0.07] rounded-2xl p-6">
-            <p className="text-xs font-semibold text-white/40 tracking-widest mb-3">AI RECOMMENDATIONS</p>
+            <p className="text-xs font-semibold text-white/40 tracking-widest mb-3">RECOMMENDATIONS</p>
             <AIRecommendations products={products} sales={sales} />
           </div>
           <div className="bg-white/[0.025] border border-white/[0.07] rounded-2xl p-6">

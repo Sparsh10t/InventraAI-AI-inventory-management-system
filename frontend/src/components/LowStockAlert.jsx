@@ -1,7 +1,7 @@
 const LowStockAlert = ({ products }) => {
 
   const lowStockProducts = products.filter(
-    (product) => product.quantity < 10
+    (product) => product.quantity < 20
   );
 
   return (
