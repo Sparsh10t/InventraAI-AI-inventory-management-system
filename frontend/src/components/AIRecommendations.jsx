@@ -22,7 +22,8 @@ const AIRecommendations = ({
       product.quantity < 20 &&
       totalSold >= 5
     ) {
-
+console.log("Products:", products);
+console.log("Sales:", sales);
       recommendations.push({
         name: product.name,
         quantity: product.quantity,

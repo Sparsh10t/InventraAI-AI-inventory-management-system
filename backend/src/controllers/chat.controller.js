@@ -1,10 +1,9 @@
 import dotenv from "dotenv";
-
 dotenv.config();
+
 import { GoogleGenAI } from "@google/genai";
 import { Product } from "../models/Product.js";
 import { Sales } from "../models/Sales.js";
-
 
 const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
@@ -15,36 +14,106 @@ export const chatWithAI = async (req, res) => {
     const { question } = req.body;
 
     const products = await Product.find({
-  userId: req.user._id,
-});
+      userId: req.user._id,
+    });
 
-const sales = await Sales.find({
-  userId: req.user._id,
-});
+    const sales = await Sales.find({
+      userId: req.user._id,
+    });
+
+    // ===== Business Summary =====
+
+    const totalRevenue = sales.reduce(
+      (sum, sale) => sum + (sale.totalPrice || 0),
+      0
+    );
+
+    const totalUnitsSold = sales.reduce(
+      (sum, sale) => sum + (sale.quantitySold || 0),
+      0
+    );
+
+    const lowStockProducts = products.filter(
+      (product) => product.quantity < 10
+    );
+
+    const productSales = {};
+
+    sales.forEach((sale) => {
+      if (!productSales[sale.productName]) {
+        productSales[sale.productName] = 0;
+      }
+
+      productSales[sale.productName] += sale.quantitySold;
+    });
+
+    let topSellingProduct = "No Sales";
+
+    if (Object.keys(productSales).length > 0) {
+      topSellingProduct = Object.keys(productSales).reduce((a, b) =>
+        productSales[a] > productSales[b] ? a : b
+      );
+    }
 
     const context = `
-You are an Inventory Management AI Assistant.
+You are Inventra AI, an intelligent Inventory Management Assistant.
 
-Inventory Data:
+BUSINESS SUMMARY
 
-Products:
+Total Products: ${products.length}
+
+Total Sales Records: ${sales.length}
+
+Total Revenue: ₹${totalRevenue}
+
+Total Units Sold: ${totalUnitsSold}
+
+Top Selling Product: ${topSellingProduct}
+
+Low Stock Products:
+${
+  lowStockProducts.length > 0
+    ? lowStockProducts
+        .map(
+          (p) =>
+            `${p.name} (${p.quantity} units left)`
+        )
+        .join(", ")
+    : "None"
+}
+
+PRODUCT DATA:
 ${JSON.stringify(products, null, 2)}
 
-Sales:
+SALES DATA:
 ${JSON.stringify(sales, null, 2)}
 
-Rules:
-1. Answer ONLY from the provided inventory data.
-2. Do not make up information.
-3. Keep answers short and professional.
-4. If data is unavailable, say "I could not find that information in the inventory database."
+RULES:
 
-User Question:
+1. Answer ONLY using the provided inventory and sales data.
+2. Never invent information.
+3. Be concise and professional.
+4. If information is unavailable, say:
+"I could not find that information in the inventory database."
+5. You can answer questions about:
+   - Revenue
+   - Sales
+   - Products
+   - Inventory
+   - Low stock items
+   - Top selling products
+   - Restocking suggestions
+   - Inventory summary
+6. For restocking suggestions, prioritize products with:
+   - Low stock
+   - High sales
+
+USER QUESTION:
 ${question}
 `;
 
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
+      model: "gemini-2.5-flash",
       contents: context,
     });
 

@@ -21,7 +21,6 @@ app.use(cors({
 }))
 
 
-
 app.use(express.json({ limit: "16kb"}))  // JSON data read karega (max 16kb allowed)
 
 app.use(express.urlencoded({extended: true, limit: "16kb"})) // Form/URL data read karega (complex bhi)
