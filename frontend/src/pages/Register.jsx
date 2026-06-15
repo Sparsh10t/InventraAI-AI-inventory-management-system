@@ -73,7 +73,7 @@ const Register = () => {
                 <input
                   type="text"
                   name="fullName"
-                  placeholder="Sparsh Tiwari"
+                  placeholder="Enter Full Name"
                   onChange={handleChange}
                   value={formData.fullName}
                   required
@@ -85,7 +85,7 @@ const Register = () => {
                 <input
                   type="text"
                   name="username"
-                  placeholder="sparsh10t"
+                  placeholder="Enter Username"
                   onChange={handleChange}
                   value={formData.username}
                   required
