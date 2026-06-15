@@ -88,6 +88,13 @@ ${JSON.stringify(products, null, 2)}
 SALES DATA:
 ${JSON.stringify(sales, null, 2)}
 
+IMPORTANT:
+- Do NOT use markdown.
+- Do NOT use ** or * symbols.
+- Return plain text bullet points only.
+- use next line for each bullet point or when needed.
+- Always answer based on the provided data.
+
 RULES:
 
 1. Answer ONLY using the provided inventory and sales data.
