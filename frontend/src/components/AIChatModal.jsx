@@ -71,7 +71,7 @@ const AIChatModal = ({ show, setShow, onClose }) => {
       onClick={(e) => { if (e.target === e.currentTarget) handleClose(); }}
     >
       {/* ── Modal ── */}
-      <div className="w-[50vw] h-[60vh] min-w-[400px] bg-[rgb(6,12,28)] border border-white/10 rounded-2xl shadow-[0_24px_80px_rgba(0,0,0,0.6)] flex flex-col overflow-hidden animate-[fadeUp_0.25s_ease]">
+      <div className="w-[50vw] h-[60vh] min-w-[400px] bg-zinc-900 border border-white/10 rounded-2xl shadow-[0_24px_80px_rgba(0,0,0,0.6)] flex flex-col overflow-hidden animate-[fadeUp_0.25s_ease]">
 
         {/* ── Header ── */}
         <div className="flex items-center justify-between px-5 py-4 bg-gradient-to-r from-cyan-500/20 to-violet-500/20 border-b border-white/[0.08]">
@@ -115,7 +115,7 @@ const AIChatModal = ({ show, setShow, onClose }) => {
               <div
                 className={`px-4 py-2.5 rounded-2xl max-w-[75%] text-sm leading-relaxed
                   ${msg.sender === "user"
-                    ? "bg-cyan-500 text-[rgb(2,8,20)] font-medium rounded-br-sm"
+                    ? "bg-cyan-500 text-zinc-950 font-medium rounded-br-sm"
                     : "bg-white/[0.06] border border-white/[0.08] text-white/85 rounded-bl-sm"
                   }`}
               >
@@ -154,7 +154,7 @@ const AIChatModal = ({ show, setShow, onClose }) => {
             <button
               onClick={handleSend}
               disabled={!question.trim() || loading}
-              className="w-10 h-10 rounded-xl bg-cyan-500 text-[rgb(2,8,20)] flex items-center justify-center hover:bg-cyan-400 transition-colors disabled:opacity-40 disabled:cursor-not-allowed shrink-0"
+              className="w-10 h-10 rounded-xl bg-cyan-500 text-zinc-950 flex items-center justify-center hover:bg-cyan-400 transition-colors disabled:opacity-40 disabled:cursor-not-allowed shrink-0"
             >
               <Send size={15} />
             </button>

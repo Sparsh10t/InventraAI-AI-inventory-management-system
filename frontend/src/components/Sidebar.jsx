@@ -21,7 +21,7 @@ const Sidebar = ({ setShowChat }) => {
   };
 
   return (
-    <div className="fixed left-0 top-0 h-screen w-60 bg-[rgb(4,10,24)] border-r border-white/[0.06] flex flex-col z-40">
+    <div className="fixed left-0 top-0 h-screen w-60 bg-zinc-900 border-r border-white/[0.06] flex flex-col z-40">
 
       {/* ── Logo ── */}
       <div className="px-5 py-6 border-b border-white/[0.06]">
@@ -67,7 +67,7 @@ const Sidebar = ({ setShowChat }) => {
       <div className="px-3 mb-3">
         <button
           onClick={() => setShowChat(true)}
-          className="w-full rounded-2xl bg-gradient-to-br from-[rgb(10,20,50)] to-[rgb(20,10,60)] border border-violet-500/20 hover:border-cyan-500/40 transition-all overflow-hidden group"
+          className="w-full rounded-2xl bg-gradient-to-br from-zinc-800 to-zinc-900 border border-zinc-700/30 hover:border-cyan-500/40 transition-all overflow-hidden group"
         >
           {/* Robot image area */}
           <div className="flex justify-center pt-4 pb-1">
@@ -83,7 +83,7 @@ const Sidebar = ({ setShowChat }) => {
             <p className="text-white/35 text-[11px] mt-0.5">Ask about your inventory</p>
           </div>
           {/* Bottom gradient bar */}
-          <div className="h-0.5 bg-gradient-to-r from-cyan-500 to-violet-500 opacity-60 group-hover:opacity-100 transition-opacity" />
+          <div className="h-0.5 bg-gradient-to-r from-cyan-500 to-teal-500 opacity-60 group-hover:opacity-100 transition-opacity" />
         </button>
       </div>
 
@@ -95,8 +95,8 @@ const Sidebar = ({ setShowChat }) => {
           to="/profile"
           className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-white/50 hover:text-white hover:bg-white/[0.05] transition-all group"
         >
-          <div className="w-7 h-7 rounded-lg bg-violet-500/20 border border-violet-500/20 flex items-center justify-center shrink-0">
-            <User size={13} className="text-violet-400" />
+          <div className="w-7 h-7 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0">
+            <User size={13} className="text-cyan-400" />
           </div>
           <span>Profile</span>
         </Link>

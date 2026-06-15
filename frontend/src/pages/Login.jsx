@@ -31,11 +31,11 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[rgb(2,8,20)] flex items-center justify-center px-4 relative overflow-hidden">
+    <div className="min-h-screen bg-zinc-950 flex items-center justify-center px-4 relative overflow-hidden">
 
       {/* Background orbs */}
       <div className="absolute top-[-100px] right-[-100px] w-[500px] h-[500px] rounded-full bg-cyan-500/[0.07] blur-3xl pointer-events-none" />
-      <div className="absolute bottom-[-50px] left-[-80px] w-[400px] h-[400px] rounded-full bg-violet-500/[0.07] blur-3xl pointer-events-none" />
+      <div className="absolute bottom-[-50px] left-[-80px] w-[400px] h-[400px] rounded-full bg-slate-500/[0.05] blur-3xl pointer-events-none" />
 
       <div className="w-full max-w-md relative z-10">
 

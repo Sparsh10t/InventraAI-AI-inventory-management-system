@@ -3,7 +3,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
     return (
-      <div className="bg-[rgb(4,10,24)] border border-white/10 rounded-xl px-4 py-3 shadow-xl">
+      <div className="bg-zinc-900 border border-white/10 rounded-xl px-4 py-3 shadow-xl">
         <p className="text-white/40 text-xs mb-1">Sale #{label}</p>
         <p className="text-cyan-400 font-bold text-sm">{payload[0].value} units</p>
       </div>

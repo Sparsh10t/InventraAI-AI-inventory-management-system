@@ -114,7 +114,7 @@ const Navbar = () => {
     <nav style={{
       position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
       padding: "0 32px",
-      background: scrolled ? "rgba(2,8,20,0.85)" : "transparent",
+      background: scrolled ? "rgba(9,9,11,0.85)" : "transparent",
       backdropFilter: scrolled ? "blur(20px)" : "none",
       borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "none",
       transition: "all 0.4s ease",
@@ -214,7 +214,7 @@ const Hero = ({ heroImage }) => (
             {["#06b6d4","#8b5cf6","#06b6d4","#f59e0b"].map((c, i) => (
               <div key={i} style={{
                 width: 28, height: 28, borderRadius: "50%",
-                background: c, border: "2px solid rgb(2,8,20)",
+                background: c, border: "2px solid rgb(9,9,11)",
                 marginLeft: i ? -8 : 0
               }} />
             ))}
@@ -283,7 +283,7 @@ const Hero = ({ heroImage }) => (
         {/* Floating stat badge */}
         <div style={{
           position: "absolute", bottom: -16, left: -20,
-          background: "rgba(2,8,20,0.9)", border: "1px solid rgba(6,182,212,0.3)",
+          background: "rgba(9,9,11,0.9)", border: "1px solid rgba(6,182,212,0.3)",
           borderRadius: 14, padding: "12px 18px",
           backdropFilter: "blur(20px)",
           boxShadow: "0 8px 32px rgba(0,0,0,0.4)"
@@ -294,7 +294,7 @@ const Hero = ({ heroImage }) => (
         </div>
         <div style={{
           position: "absolute", top: -16, right: -20,
-          background: "rgba(2,8,20,0.9)", border: "1px solid rgba(139,92,246,0.3)",
+          background: "rgba(9,9,11,0.9)", border: "1px solid rgba(139,92,246,0.3)",
           borderRadius: 14, padding: "12px 18px",
           backdropFilter: "blur(20px)",
           boxShadow: "0 8px 32px rgba(0,0,0,0.4)"
@@ -578,7 +578,7 @@ const Footer = () => (
 export default function LandingPage({ heroImage }) {
   return (
     <div style={{
-      background: "rgb(2,8,20)",
+      background: "rgb(9,9,11)",
       minHeight: "100vh",
       color: "white",
       fontFamily: "'Inter', system-ui, -apple-system, sans-serif",

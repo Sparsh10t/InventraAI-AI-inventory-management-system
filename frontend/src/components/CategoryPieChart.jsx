@@ -12,7 +12,7 @@ const COLORS = [
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
-      <div className="bg-[rgb(4,10,24)] border border-white/10 rounded-xl px-4 py-3 shadow-xl">
+      <div className="bg-zinc-900 border border-white/10 rounded-xl px-4 py-3 shadow-xl">
         <p className="text-white/40 text-xs mb-1">{payload[0].name}</p>
         <p className="font-bold text-sm" style={{ color: payload[0].payload.fill }}>
           {payload[0].value} units

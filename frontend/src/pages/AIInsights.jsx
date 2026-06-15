@@ -90,7 +90,7 @@ const response = await axios.get(
 
   return (
     // Same flex layout as Dashboard — no gap issue
-    <div className="bg-[rgb(2,8,20)] min-h-screen text-white">
+    <div className="bg-zinc-950 min-h-screen text-white">
 
       <Sidebar setShowChat={setShowChat} />
 

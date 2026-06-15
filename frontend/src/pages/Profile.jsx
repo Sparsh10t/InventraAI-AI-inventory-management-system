@@ -66,7 +66,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="bg-[rgb(2,8,20)] min-h-screen text-white font-sans">
+    <div className="bg-zinc-950 min-h-screen text-white font-sans">
       <Sidebar setShowChat={setShowChat} />
 
       <div className="ml-60 p-8">

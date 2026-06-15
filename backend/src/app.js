@@ -2,8 +2,6 @@ import express from "express"            // Express framework import kiya (serve
 
 import cors from "cors"                  // CORS import kiya (frontend-backend connect ke liye)
 
-import cookieParser from "cookie-parser" // Cookies read karne ke liye library
-
 import productRoutes from "./routes/product.route.js";
 import userRoutes from "./routes/user.routes.js";
 import salesRoutes from "./routes/sales.routes.js";
@@ -21,13 +19,12 @@ app.use(cors({
 }))
 
 
+
 app.use(express.json({ limit: "16kb"}))  // JSON data read karega (max 16kb allowed)
 
 app.use(express.urlencoded({extended: true, limit: "16kb"})) // Form/URL data read karega (complex bhi)
 
 app.use(express.static("public"))        // "public" folder ko static banaya (files access ke liye)
-
-app.use(cookieParser())                  // Cookies ko parse/read karne ke liye middleware
 
 app.use("/api/products", productRoutes);
 

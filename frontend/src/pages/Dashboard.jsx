@@ -115,7 +115,7 @@ const ProductCard = ({ product, onSell, onDelete, onStock }) => {
         <button
           onClick={handleSell}
           disabled={sellQty < 1 || sellQty > product.quantity}
-          className="flex-1 py-2 rounded-xl bg-cyan-500 text-[rgb(2,8,20)] font-bold text-sm hover:bg-cyan-400 hover:shadow-[0_0_16px_rgba(6,182,212,0.4)] transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+          className="flex-1 py-2 rounded-xl bg-cyan-500 text-zinc-950 font-bold text-sm hover:bg-cyan-400 hover:shadow-[0_0_16px_rgba(6,182,212,0.4)] transition-all disabled:opacity-40 disabled:cursor-not-allowed"
         >
           Sell {sellQty} Unit{sellQty > 1 ? "s" : ""}
         </button>
@@ -250,7 +250,7 @@ const Dashboard = () => {
   const totalSales = sales.length;
 
   return (
-    <div className="bg-[rgb(2,8,20)] min-h-screen text-white font-sans">
+    <div className="bg-zinc-950 min-h-screen text-white font-sans">
 
       {/* Sidebar — unchanged */}
       <Sidebar setShowChat={setShowChat} />
