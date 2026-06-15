@@ -1,6 +1,6 @@
 const AIRecommendations = ({
-  products,
-  sales,
+  products = [],
+  sales = [],
 }) => {
 
   const recommendations = [];
@@ -12,7 +12,7 @@ const AIRecommendations = ({
     sales.forEach((sale) => {
 
       if (
-        sale.productName === product.name
+        sale.productId === product._id
       ) {
         totalSold += sale.quantitySold;
       }
@@ -22,16 +22,15 @@ const AIRecommendations = ({
       product.quantity < 20 &&
       totalSold >= 5
     ) {
-console.log("Products:", products);
-console.log("Sales:", sales);
       recommendations.push({
+        id: product._id,
         name: product.name,
         quantity: product.quantity,
         sold: totalSold,
       });
     }
   });
-console.log("Recommendations:", recommendations);
+
   return (
     <div className="bg-white/[0.025] p-6 rounded-2xl shadow mt-8">
 
@@ -50,7 +49,7 @@ console.log("Recommendations:", recommendations);
         recommendations.map((item) => (
 
           <div
-            key={item.name}
+            key={item.id}
             className="border-b py-3"
           >
 

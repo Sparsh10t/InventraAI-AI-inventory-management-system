@@ -142,12 +142,22 @@ const Dashboard = () => {
   useEffect(() => {
     fetchProducts();
     fetchForecast();
+    fetchSales();
   }, []);
 
   const fetchProducts = async () => {
     try {
       const data = await getProducts();
       setProducts(data.products);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const fetchSales = async () => {
+    try {
+      const data = await getSales();
+      setSales(data.sales || []);
     } catch (error) {
       console.log(error);
     }
