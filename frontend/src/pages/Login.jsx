@@ -45,7 +45,7 @@ const Login = () => {
           {/* Logo */}
           <div className="flex items-center gap-2.5 mb-8">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-400 to-violet-500 flex items-center justify-center font-extrabold text-base text-white">
-              I
+              🗃️
             </div>
             <span className="text-white font-extrabold text-xl tracking-tight">
               Inventra<span className="text-cyan-400">AI</span>
